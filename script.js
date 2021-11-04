@@ -1,14 +1,14 @@
-let nombre = prompt("Ingrese su nombre:");
-let apellido = prompt("Ingrese su apellido:");
-let anio = parseInt(prompt("Hola " + nombre + " " + apellido + "! Por favor ingresa el año de tu nacimiento:"));
-let resultado = (2021 - anio);
-
-if (resultado < 18){
-    alert ("Que bueno que con " + resultado + " años quieras aprender Javascript");    
-}else if ((resultado >= 18) && (resultado <= 35)){
-    alert ("Muy buena decisión estudiar Javascript a los " + resultado + " años.");
-}else if (resultado > 35){
-    alert("Vaya, parece que ya tienes " + resultado + " años, pero no importa, nunca es tarde para estudiar Javascript!");
+let ingreso = parseInt(prompt("Ingrese un número entre 0 y 1000"));
+let numero = ingreso;
+let pares = 0;
+for (let i = 1; i <= ingreso; i++){
+    if ((numero % 2) == 0){
+        pares++;
+    }
+    numero--;
+}
+if (pares > 1){
+    alert("Hay " + pares + " números pares entre 0 y " + ingreso);
 }else{
-    alert("Vaya, parece que no ingresaste un año valido. Recarga la página y vuelve a intentarlo.")
+    alert("Hay " + pares + " número par entre 0 y " + ingreso);
 }
