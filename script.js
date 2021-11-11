@@ -1,14 +1,40 @@
-let ingreso = parseInt(prompt("Ingrese un número entre 0 y 1000"));
-let numero = ingreso;
-let pares = 0;
-for (let i = 1; i <= ingreso; i++){
-    if ((numero % 2) == 0){
-        pares++;
+let articulo = parseInt(prompt("Ingrese numero de articulo, del 1 al 5:"));
+let cantidad = parseInt(prompt("Ingrese la cantidad:"));
+function obtengoPrecio(articulo){
+    if ((articulo > 0) && (articulo < 6)){
+        switch (articulo) {
+            case 1:
+                precio = 150;
+                break;
+            case 2:
+                precio = 250;
+                break;
+            case 3:
+                precio = 350;
+                break;
+            case 4:
+                precio = 450;
+                break;
+            case 5:
+                precio = 550;
+                break;
+            default:
+                break;
+        }
+        return precio;
+    }else {
+        alert("Codigo articulo invalido");
     }
-    numero--;
 }
-if (pares > 1){
-    alert("Hay " + pares + " números pares entre 0 y " + ingreso);
-}else{
-    alert("Hay " + pares + " número par entre 0 y " + ingreso);
+function calculoCuota(precio, cantidad, cuotas) {
+    if (cuotas > 1) {
+        const precioCuota = (precio * cantidad) / cuotas;
+        console.log("Debe abonar " + cuotas + " cuotas de:")
+        return precioCuota;
+    }else if (cuotas == 1) {
+        const precioTot = precio * cantidad;
+        console.log("El precio total es:")
+        return precioTot;
+    }
 }
+console.log(calculoCuota(obtengoPrecio(articulo), cantidad, parseInt(prompt("Ingrese en cuantas cuotas desea abonar:"))))
